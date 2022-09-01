@@ -5,14 +5,14 @@
 	<title>지금 노형은</title>
 </head>
 <body>
-	<div id="map" style="width:1500px;height:1500px;"></div>
+	<div id="map" style="width:1000px;height:1000px;"></div>
 
 	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f33527205f1b76a47e9335b43cbe714b"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
 		        center: new kakao.maps.LatLng(33.486247, 126.483869), // 지도의 중심좌표
-		        level: 5, // 지도의 확대 레벨
+		        level: 4, // 지도의 확대 레벨
 		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 		    }; 
 
