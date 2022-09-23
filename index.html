@@ -107,7 +107,7 @@ function placesSearchCB(data, status, pagination) {
         displayPlaces(data);
 
         // 페이지 번호를 표출합니다
-        displayPagination(pagination);
+        //- - - - - - - displayPagination(pagination);
 
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
@@ -325,8 +325,6 @@ function removeAllChildNods(el) {
 		// 지도에 다각형을 표시합니다
 		polygon.setMap(map);
 	
-	// 지도에 로드뷰 정보가 있는 도로를 표시하도록 지도타입을 추가합니다
-map.addOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);  
 	
 </script>
 </body>
