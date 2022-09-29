@@ -94,9 +94,11 @@ function searchPlaces() {
         return false;
     }
 
-    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    ps.keywordSearch( keyword, placesSearchCB); 
-}
+    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다 + 범위 설정
+    ps.keywordSearch( keyword, placesSearchCB, { bounds : new daum.maps.LatLngBounds(
+			new kakao.maps.LatLng(33.477049, 126.465485), //남서
+			new kakao.maps.LatLng(33.493406,126.501749)  //북동)
+});
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
@@ -107,7 +109,7 @@ function placesSearchCB(data, status, pagination) {
         displayPlaces(data);
 
         // 페이지 번호를 표출합니다
-        //- - - - - - - displayPagination(pagination);
+        displayPagination(pagination);
 
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
