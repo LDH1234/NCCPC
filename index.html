@@ -95,12 +95,7 @@ function searchPlaces() {
     }
 
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다 + 범위 설정
-    ps.keywordSearch( keyword, placesSearchCB, {
-	    location: new kakao.maps.LatLng(33.486247, 126.483869),
-	    bounds : new kakao.maps.LatLngBounds(
-			new kakao.maps.LatLng(33.477049, 126.465485), //남서
-			new kakao.maps.LatLng(33.493406,126.501749)  //북동)
-});
+    ps.keywordSearch( keyword, placesSearchCB);
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
