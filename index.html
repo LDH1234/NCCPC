@@ -95,12 +95,7 @@ function searchPlaces() {
     }
 
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다 + 범위 설정
-    ps.keywordSearch( keyword, placesSearchCB, {
-	    location: new kakao.maps.LatLng(33.486247, 126.483869),
-	    bounds : new kakao.maps.LatLngBounds(
-			new kakao.maps.LatLng(33.477049, 126.465485), //남서
-			new kakao.maps.LatLng(33.493406,126.501749)  //북동
-});
+    ps.keywordSearch( keyword, placesSearchCB); 
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -151,8 +146,9 @@ function displayPlaces(places) {
 
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
-        // - - - - - - bounds.extend(placePosition);
-
+	    
+        bounds.extend(placePosition);
+	    
         // 마커와 검색결과 항목에 mouseover 했을때
         // 해당 장소에 인포윈도우에 장소명을 표시합니다
         // mouseout 했을 때는 인포윈도우를 닫습니다
@@ -182,7 +178,7 @@ function displayPlaces(places) {
     menuEl.scrollTop = 0;
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-    // - - - - - map.setBounds(bounds);
+    map.setBounds(bounds);
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
