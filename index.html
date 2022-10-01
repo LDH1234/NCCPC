@@ -311,26 +311,7 @@ function removeAllChildNods(el) {
 		// 지도의 우측에 확대 축소 컨트롤을 추가한다
 		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 		
-		// 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
-		var polygonPath = [
-		     new kakao.maps.LatLng(33.493607, 126.476198),
-		    new kakao.maps.LatLng(33.493836, 126.492215),
-		    new kakao.maps.LatLng(33.493336, 126.501917),
-		    new kakao.maps.LatLng(33.481526, 126.501490),
-		    new kakao.maps.LatLng(33.481693, 126.494736),
-		    new kakao.maps.LatLng(33.476307, 126.490500),
-		    new kakao.maps.LatLng(33.476383, 126.477493),
-	            new kakao.maps.LatLng(33.485608, 126.466342)
-		];
-
-		// 지도에 표시할 다각형을 생성합니다
-		var polygon = new kakao.maps.Polygon({
-		    path:polygonPath, // 그려질 다각형의 좌표 배열입니다
-		    strokeWeight: 4, // 선의 두께입니다
-		    strokeColor: '#DF0101', // 선의 색깔입니다
-		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다.
-		});
-	
+		
 	        // 구멍난 다각형 객체를 구성할 좌표배열입니다 
 		var path = [
 				 new kakao.maps.LatLng(32 125),
@@ -362,9 +343,7 @@ function removeAllChildNods(el) {
 		});
 	
 	
-		// 지도에 다각형을 표시합니다
-			polygon.setMap(map);
-	
+		
 	
 		
 
