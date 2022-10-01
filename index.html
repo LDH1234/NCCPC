@@ -331,9 +331,6 @@ function removeAllChildNods(el) {
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다.
 		});
 	
-		// 지도에 다각형을 표시합니다
-			polygon.setMap(map);
-	
 	        // 구멍난 다각형 객체를 구성할 좌표배열입니다 
 		var path = [
 				 new kakao.maps.LatLng(32 125),
@@ -363,6 +360,11 @@ function removeAllChildNods(el) {
 		    fillColor: '000000',
 		    fillOpacity: 1
 		});
+	
+	
+		// 지도에 다각형을 표시합니다
+			polygon.setMap(map);
+	
 	
 		
 
