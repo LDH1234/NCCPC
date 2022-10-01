@@ -69,7 +69,7 @@ var markers = [];
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(33.486247, 126.483869), // 지도의 중심좌표 <보고서>
-        level: 5 // 지도의 확대 레벨 <보고서>
+        level: 7 // 지도의 확대 레벨 <보고서>
     };  
 
 // 지도를 생성합니다    
@@ -85,8 +85,8 @@ var latlng = new kakao.maps.LatLng(33.486076, 126.484298);
 
     var searchOption = {
         location: latlng,
-        radius: 750,
-	size: 15
+        radius: 900, // 단위 : 미터
+	size: 20
     };
 
 // 검색 과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
