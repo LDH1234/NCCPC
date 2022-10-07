@@ -66,6 +66,7 @@
 // 마커를 담을 배열입니다
 var markers = [];
 
+// < 보고서 !! >
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(33.486247, 126.483869), // 지도의 중심좌표
@@ -78,12 +79,13 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places();  
 	
+// 검색 옵션 객체  < 보고서 !! >	
 var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
 
-// 검색 옵션 객체
+
     var searchOption = {
         location: latlng,
-        radius: 850,
+        radius: 850, // 단위 : m
 	size: 15
     };
 
@@ -108,7 +110,7 @@ function searchPlaces() {
 			
 }
 
-// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다 < 보고서 !! >
 function placesSearchCB(data, status, pagination) {
     if (status === kakao.maps.services.Status.OK) {
 
@@ -292,20 +294,20 @@ function removeAllChildNods(el) {
 }
 	
      
-	
-	// 지도 타입 변경 컨트롤을 생성한다
+	        // < 보고서 !! >
+	        // 지도 타입 변경 컨트롤 기능을 생성한다
 		var mapTypeControl = new kakao.maps.MapTypeControl();
 
 		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
 		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);	
 	
 		// 마우스 드래그와 모바일 터치를 이용한 지도 이동을 막는다
-	       // -------- map.setDraggable(false);	
+	        // -------- map.setDraggable(false);	
 				
 		// 마우스 휠과 모바일 터치를 이용한 지도 확대, 축소를 막는다
 		// ------- map.setZoomable(false);   
 
-		// 지도에 확대 축소 컨트롤을 생성한다
+		// 지도에 확대 축소 컨트롤 기능을 생성한다
 		var zoomControl = new kakao.maps.ZoomControl();
 
 		// 지도의 우측에 확대 축소 컨트롤을 추가한다
@@ -313,22 +315,22 @@ function removeAllChildNods(el) {
 		
 		// 다각형 객체를 구성할 좌표배열입니다 
 		var path = [
-			new kakao.maps.LatLng(20,100),
-			new kakao.maps.LatLng(20,150),
-			new kakao.maps.LatLng(45,150),
-			new kakao.maps.LatLng(45,100),
+		  new kakao.maps.LatLng(20,100),
+		  new kakao.maps.LatLng(20,150),
+		  new kakao.maps.LatLng(45,150),
+		  new kakao.maps.LatLng(45,100),
 
 		];
 
 		var hole = [
-			new kakao.maps.LatLng(33.493607, 126.476198),
-					    new kakao.maps.LatLng(33.493836, 126.492215),
-					    new kakao.maps.LatLng(33.493336, 126.501917),
-					    new kakao.maps.LatLng(33.481526, 126.501490),
-					    new kakao.maps.LatLng(33.481693, 126.494736),
-					    new kakao.maps.LatLng(33.476307, 126.490500),
-					    new kakao.maps.LatLng(33.476383, 126.477493),
-					    new kakao.maps.LatLng(33.485608, 126.466342)
+		  new kakao.maps.LatLng(33.493607, 126.476198),
+		  new kakao.maps.LatLng(33.493836, 126.492215),
+		  new kakao.maps.LatLng(33.493336, 126.501917),
+		  new kakao.maps.LatLng(33.481526, 126.501490),
+		  new kakao.maps.LatLng(33.481693, 126.494736),
+		  new kakao.maps.LatLng(33.476307, 126.490500),
+		  new kakao.maps.LatLng(33.476383, 126.477493),
+		  new kakao.maps.LatLng(33.485608, 126.466342)
 		];
 
 		// 다각형을 생성하고 지도에 표시합니다
@@ -341,7 +343,8 @@ function removeAllChildNods(el) {
 		    fillColor: '#FFFFFF',
 		    fillOpacity: 1 
 		});
-	// 실시간교통 타일 이미지 추가
+		
+		// 실시간교통 타일 이미지 추가
 		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC); 
 		
 	
