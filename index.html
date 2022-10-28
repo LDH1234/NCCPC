@@ -110,22 +110,38 @@ var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
     };
 	
 // 경로추천 이벤트 실행 버튼
+	
+
 function setMapType(maptype) { 
     var rateControl = document.getElementById('btnRate');
     var moneyControl = document.getElementById('btnMoney'); 
     if (maptype === 'rate') {
-	    
+
+       		 // 평점 경로를 지도에 표시합니다
+        	var linePath = [
+		    new kakao.maps.LatLng(33.486, 126.483),
+		    new kakao.maps.LatLng(33.487, 126.484),
+		    new kakao.maps.LatLng(33.485, 126.481) 
+		];	
            
         rateControl.className = 'selected_btn';
         moneyControl.className = 'btn';
-    } else {
+	    
+    } 
+    else {
+		// 가격 경로를 지도에 표시합니다
+        	var linePath = [
+		    new kakao.maps.LatLng(33.481, 126.482),
+		    new kakao.maps.LatLng(33.479, 126.487),
+		    new kakao.maps.LatLng(33.480, 126.485) 
+		];	
            
         moneyControl.className = 'selected_btn';
         rateControl.className = 'btn';
     }
 }	
 	
-	
+
 	
 	
 	
