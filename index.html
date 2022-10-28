@@ -116,7 +116,7 @@ function setMapType(maptype) {
     var rateControl = document.getElementById('btnRate');
     var moneyControl = document.getElementById('btnMoney'); 
     if (maptype === 'rate') {
-
+	    
        		 // 평점 경로를 지도에 표시합니다
         	var linePath_rate = [
 		    new kakao.maps.LatLng(33.486, 126.483),
@@ -125,7 +125,7 @@ function setMapType(maptype) {
 		];	
 	    
 	    // 지도에 표시할 선을 생성합니다
-		var polyline = new kakao.maps.Polyline({
+		var polyline_rate = new kakao.maps.Polyline({
 		    path: linePath_rate, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 5, // 선의 두께 입니다
 		    strokeColor: '#FFAE00', // 선의 색깔입니다
@@ -134,13 +134,16 @@ function setMapType(maptype) {
 		});
 
 		// 지도에 선을 표시합니다 
-		polyline.setMap(map);  
+		polyline_rate.setMap(map);  
+	        polyline_money.setMap(null); 
+	        
            
         rateControl.className = 'selected_btn';
         moneyControl.className = 'btn';
 	    
     } 
     else {
+	    
 		// 가격 경로를 지도에 표시합니다
         	var linePath_money = [
 		    new kakao.maps.LatLng(33.481, 126.482),
@@ -149,7 +152,7 @@ function setMapType(maptype) {
 		];	
 	    
 	    // 지도에 표시할 선을 생성합니다
-		var polyline = new kakao.maps.Polyline({
+		var polyline_money = new kakao.maps.Polyline({
 		    path: linePath_money, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 5, // 선의 두께 입니다
 		    strokeColor: '#FFAE00', // 선의 색깔입니다
@@ -158,7 +161,8 @@ function setMapType(maptype) {
 		});
 
 		// 지도에 선을 표시합니다 
-		polyline.setMap(map); 
+		polyline_money.setMap(map); 
+	        polyline_rate.setMap(null);
            
         moneyControl.className = 'selected_btn';
         rateControl.className = 'btn';
