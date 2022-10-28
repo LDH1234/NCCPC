@@ -9,6 +9,17 @@
 .map_wrap {position:relative;width:100%;height:400px;}
 #menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
 .bg_white {background:#fff;}
+	    
+// 추가	    
+    
+.machine_learning {position:absolute;top:10px;right:10px;overflow:hidden;width:130px;height:30px;margin:0;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;}
+.machine_learning span {display:block;width:65px;height:30px;float:left;text-align:center;line-height:30px;cursor:pointer;}
+.machine_learning .btn {background:#fff;background:linear-gradient(#fff,  #e6e6e6);}       
+.machine_learning .btn:hover {background:#f5f5f5;background:linear-gradient(#f5f5f5,#e3e3e3);}
+.machine_learning .btn:active {background:#e6e6e6;background:linear-gradient(#e6e6e6, #fff);}    
+.machine_learning .selected_btn {color:#fff;background:#425470;background:linear-gradient(#425470, #5b6d8a);}
+.machine_learning .selected_btn:hover {color:#fff;}   	    
+	    
 #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
 #menu_wrap .option p {margin:10px 0;}  
@@ -47,9 +58,9 @@
 <div class="map_wrap">
     <div id="map" style="width:100%;height:750px;position:relative;overflow:hidden;"></div>
 <!-- 경로추천 이벤트 실행 버튼입니다 -->
-    <div class="custom_typecontrol radius_border">
-        <span id="btnRoadmap" class="btn" onclick="setMapType('roadmap')">지도</span>
-        <span id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</span>
+    <div class="machine_learning">
+        <span id="btnRate" class="selected_btn" onclick="setMapType('rate')">평점</span>
+        <span id="btnMoney" class="btn" onclick="setMapType('money')">가격</span>
 	    
     <div id="menu_wrap" class="bg_white">
         <div class="option">
@@ -93,7 +104,27 @@ var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
         radius: 850, // 단위 : m
 	size: 15
     };
-
+	
+// 경로추천 이벤트 실행 버튼
+function setMapType(maptype) { 
+    var rateControl = document.getElementById('btnRate');
+    var moneyControl = document.getElementById('btnMoney'); 
+    if (maptype === 'rate') {
+           
+        rateControl.className = 'selected_btn';
+        moneyControl.className = 'btn';
+    } else {
+           
+        moneyControl.className = 'selected_btn';
+        rateControl.className = 'btn';
+    }
+}	
+	
+	
+	
+	
+	
+	
 // 검색 과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
