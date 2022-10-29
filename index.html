@@ -109,13 +109,18 @@ var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
 	size: 15
     };
 	
-// 경로추천 이벤트 실행 버튼
-	
+//- - - - - - - 경로추천 이벤트 실행 버튼
+
+kakao.maps.event.addListener(polyline_rate, 'mouseover', function(mouseEvent) {  
+    var latlng = mouseEvent.latLng;
+    console.log(latlng.toString());         
+});
 
 function setMapType(maptype) { 
     var rateControl = document.getElementById('btnRate');
     var moneyControl = document.getElementById('btnMoney'); 
- // 평점 경로를 지도에 표시합니다
+	
+// 평점 경로를 지도에 표시합니다
     var linePath_rate = [
 		    new kakao.maps.LatLng(33.486, 126.483),
 		    new kakao.maps.LatLng(33.487, 126.484),
@@ -129,7 +134,6 @@ function setMapType(maptype) {
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
 		    strokeStyle: 'solid' // 선의 스타일입니다
 		});
-
 // 가격 경로를 지도에 표시합니다
     var linePath_money = [
 		    new kakao.maps.LatLng(33.481, 126.482),
@@ -148,9 +152,10 @@ function setMapType(maptype) {
     if (maptype === 'rate') {
 	    
 	// 지도에 선을 표시합니다 
-	polyline_rate.setMap(map);  
-	polyline_money.setMap(null); 
-	        
+	polyline_rate.setMap(map);
+	    function closeOverlay() {
+ 		   polyline_money.setMap(null); }
+		
         rateControl.className = 'selected_btn';
         moneyControl.className = 'btn';
 	    
@@ -159,7 +164,8 @@ function setMapType(maptype) {
 	    
 	// 지도에 선을 표시합니다 
         polyline_money.setMap(map); 
-	polyline_rate.setMap(null);
+	    function closeOverlay() {
+ 		   polyline_rate.setMap(null); }
            
         moneyControl.className = 'selected_btn';
         rateControl.className = 'btn';
