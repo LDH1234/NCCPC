@@ -168,7 +168,7 @@ function setMapType(maptype) {
 	
    var circle_a = new kakao.maps.Circle({
     center : new kakao.maps.LatLng(33.487585, 126.478298),  // 원의 중심좌표 입니다 
-    radius: 50, // 미터 단위의 원의 반지름입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
     strokeWeight: 2, // 선의 두께입니다 
     strokeColor: '#000000', // 선의 색깔입니다
     strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
@@ -176,7 +176,7 @@ function setMapType(maptype) {
 }); 
    var circle_b = new kakao.maps.Circle({
     center : new kakao.maps.LatLng(33.485640, 126.482756),  // 원의 중심좌표 입니다 
-    radius: 50, // 미터 단위의 원의 반지름입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
     strokeWeight: 2, // 선의 두께입니다 
     strokeColor: '#000000', // 선의 색깔입니다
     strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
@@ -185,7 +185,7 @@ function setMapType(maptype) {
 	
 	var circle_c = new kakao.maps.Circle({
     center : new kakao.maps.LatLng(33.485016, 126.485070),  // 원의 중심좌표 입니다 
-    radius: 50, // 미터 단위의 원의 반지름입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
     strokeWeight: 2, // 선의 두께입니다 
     strokeColor: '#FF4000', // 선의 색깔입니다
     strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
@@ -193,7 +193,7 @@ function setMapType(maptype) {
 }); 
 	var circle_d = new kakao.maps.Circle({
     center : new kakao.maps.LatLng(33.485375, 126.481613),  // 원의 중심좌표 입니다 
-    radius: 50, // 미터 단위의 원의 반지름입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
     strokeWeight: 2, // 선의 두께입니다 
     strokeColor: '#FF4000', // 선의 색깔입니다
     strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
@@ -202,8 +202,8 @@ function setMapType(maptype) {
 	
     if (maptype === 'rate') {
 	 
-	circle_a.setMap(map);
-	circle_b.setMap(map);
+	circle_c.setMap(map);
+	circle_d.setMap(map);
 	polyline_rate.setMap(map);
 	  
         rateControl.className = 'selected_btn';  
@@ -211,8 +211,8 @@ function setMapType(maptype) {
     } 
     else if (maptype === 'money') {
 	    
-	circle_c.setMap(map);
-	circle_d.setMap(map);
+	circle_a.setMap(map);
+	circle_b.setMap(map);
 	      
 	polyline_money.setMap(map);
 	polyline_rate.setMap(null);
