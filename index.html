@@ -133,25 +133,26 @@ function setMapType(maptype) {
 // 지도에 표시할 선을 생성합니다
 		var polyline_rate = new kakao.maps.Polyline({
 		    path: linePath_rate, // 선을 구성하는 좌표배열 입니다
-		    strokeWeight: 3, // 선의 두께 입니다
+		    strokeWeight: 4, // 선의 두께 입니다
 		    strokeColor: '#01DFD7', // 선의 색깔입니다
 			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-		    strokeStyle: 'solid' // 선의 스타일입니다
+		    strokeStyle: 'longdash' // 선의 스타일입니다
 		    
 		});
 	
 // 지도에 표시할 선을 생성합니다
 		var polyline_money = new kakao.maps.Polyline({
 		    path: linePath_money, // 선을 구성하는 좌표배열 입니다
-		    strokeWeight: 3, // 선의 두께 입니다
+		    strokeWeight: 4, // 선의 두께 입니다
 		    strokeColor: '#A901DB', // 선의 색깔입니다
 			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-		    strokeStyle: 'solid' // 선의 스타일입니다
+		    strokeStyle: 'longdash' // 선의 스타일입니다
 		});
 	    
 polyline_rate.setMap(map); 	
+polyline_money.setMap(null);
 	    
     if (maptype === 'rate') {
 	 
