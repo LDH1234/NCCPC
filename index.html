@@ -165,25 +165,61 @@ function setMapType(maptype) {
 		    strokeStyle: 'solid' // 선의 스타일입니다
 		});
 	
+	
+   var circle1 = new kakao.maps.Circle({
+    center : new kakao.maps.LatLng(33.487585, 126.478298),  // 원의 중심좌표 입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
+    strokeWeight: 2, // 선의 두께입니다 
+    strokeColor: '#000000', // 선의 색깔입니다
+    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeStyle: 'solid', // 선의 스타일 입니다 
+}); 
+   var circle2 = new kakao.maps.Circle({
+    center : new kakao.maps.LatLng(33.485640, 126.482756),  // 원의 중심좌표 입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
+    strokeWeight: 2, // 선의 두께입니다 
+    strokeColor: '#000000', // 선의 색깔입니다
+    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeStyle: 'solid', // 선의 스타일 입니다 
+}); 
+	
+	var circle3 = new kakao.maps.Circle({
+    center : new kakao.maps.LatLng(33.487585, 126.478298),  // 원의 중심좌표 입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
+    strokeWeight: 2, // 선의 두께입니다 
+    strokeColor: '#FF4000', // 선의 색깔입니다
+    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeStyle: 'solid', // 선의 스타일 입니다 
+}); 
+	var circle4 = new kakao.maps.Circle({
+    center : new kakao.maps.LatLng(33.487585, 126.478298),  // 원의 중심좌표 입니다 
+    radius: 5, // 미터 단위의 원의 반지름입니다 
+    strokeWeight: 2, // 선의 두께입니다 
+    strokeColor: '#FF4000', // 선의 색깔입니다
+    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeStyle: 'solid', // 선의 스타일 입니다 
+}); 
+	
     if (maptype === 'rate') {
 	 
-	
+	circle1.setMap(map);
+	circle2.setMap(map);
 	polyline_rate.setMap(map);
-	polyline_money.setMap(null);
+	  
+        rateControl.className = 'selected_btn';  
 	    
-	       
-        rateControl.className = 'selected_btn';
-        moneyControl.className = 'btn';
-	   
     } 
     else if (maptype === 'money') {
+	    
+	circle3.setMap(map);
+	circle4.setMap(map);
 	      
 	polyline_money.setMap(map);
 	polyline_rate.setMap(null);
 	    
       	
         moneyControl.className = 'selected_btn';
-        rateControl.className = 'btn';
+        
     }
 }	
 	
