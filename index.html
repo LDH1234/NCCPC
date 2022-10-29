@@ -111,7 +111,6 @@ var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
 	
 //- - - - - - - 경로추천 이벤트 실행 버튼
 
-	
 function setMapType(maptype) { 
     var rateControl = document.getElementById('btnRate');
     var moneyControl = document.getElementById('btnMoney'); 
@@ -134,10 +133,10 @@ function setMapType(maptype) {
 		var polyline_rate = new kakao.maps.Polyline({
 		    path: linePath_rate, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 4, // 선의 두께 입니다
-		    strokeColor: '#01DFD7', // 선의 색깔입니다
+		    strokeColor: '#FFFF00', // 선의 색깔입니다
 			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-		    strokeStyle: 'longdash' // 선의 스타일입니다
+		    strokeStyle: 'solid' // 선의 스타일입니다
 		    
 		});
 	
@@ -145,14 +144,11 @@ function setMapType(maptype) {
 		var polyline_money = new kakao.maps.Polyline({
 		    path: linePath_money, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 4, // 선의 두께 입니다
-		    strokeColor: '#A901DB', // 선의 색깔입니다
+		    strokeColor: '#80FF00', // 선의 색깔입니다
 			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-		    strokeStyle: 'longdash' // 선의 스타일입니다
+		    strokeStyle: 'solid' // 선의 스타일입니다
 		});
-	    
-polyline_rate.setMap(map); 	
-polyline_money.setMap(null);
 	    
     if (maptype === 'rate') {
 	 
