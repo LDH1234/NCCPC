@@ -116,9 +116,20 @@ function setMapType(maptype) {
 	
 // 평점 경로를 생성합니다
     var linePath_rate = [
-		    new kakao.maps.LatLng(33.489165,126.484929),
-		    new kakao.maps.LatLng(33.485039,126.485066),
-		    new kakao.maps.LatLng(33.485362,126.481566) 
+		 
+	  			new kakao.maps.LatLng(33.488404, 126.483500),
+				new kakao.maps.LatLng(33.490304, 126.481323),
+				new kakao.maps.LatLng(33.487817, 126.478192),
+				new kakao.maps.LatLng(33.487038, 126.479059),
+				new kakao.maps.LatLng(33.487365, 126.479483),
+				new kakao.maps.LatLng(33.486980, 126.479940),
+				new kakao.maps.LatLng(33.487700, 126.480847),
+				new kakao.maps.LatLng(33.487132, 126.481469),
+				new kakao.maps.LatLng(33.487007, 126.481351),
+				new kakao.maps.LatLng(33.486688, 126.481601),
+				new kakao.maps.LatLng(33.486124, 126.481587),
+				new kakao.maps.LatLng(33.486113, 126.481511),
+				new kakao.maps.LatLng(33.485526, 126.481498),
 		];	
 	
 // 가격 경로를 생성합니다
@@ -128,7 +139,7 @@ function setMapType(maptype) {
 		    new kakao.maps.LatLng(33.485501,126.482653) 
 		];	
 	
-		var polyline_rate = new kakao.maps.Polyline({
+   var polyline_rate = new kakao.maps.Polyline({
 		    path: linePath_rate, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 4, // 선의 두께 입니다
 		    strokeColor: '#FF4000', // 선의 색깔입니다
@@ -138,7 +149,7 @@ function setMapType(maptype) {
 		    
 		});
 	
-		var polyline_money = new kakao.maps.Polyline({
+   var polyline_money = new kakao.maps.Polyline({
 		    path: linePath_money, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 4, // 선의 두께 입니다
 		    strokeColor: '#000000', // 선의 색깔입니다
