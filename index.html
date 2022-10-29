@@ -102,7 +102,6 @@ var ps = new kakao.maps.services.Places();
 // 검색 옵션 객체  < 보고서 !! >	
 var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
 
-
     var searchOption = {
         location: latlng,
         radius: 850, // 단위 : m
@@ -115,21 +114,20 @@ function setMapType(maptype) {
     var rateControl = document.getElementById('btnRate');
     var moneyControl = document.getElementById('btnMoney'); 
 	
-// 평점 경로를 지도에 표시합니다
+// 평점 경로를 생성합니다
     var linePath_rate = [
-		    new kakao.maps.LatLng(33.486, 126.483),
-		    new kakao.maps.LatLng(33.487, 126.484),
-		    new kakao.maps.LatLng(33.485, 126.481) 
+		    new kakao.maps.LatLng(33.489165,126.484929),
+		    new kakao.maps.LatLng(33.485039,126.485066),
+		    new kakao.maps.LatLng(33.485362,126.481566) 
 		];	
 	
-// 가격 경로를 지도에 표시합니다
+// 가격 경로를 생성합니다
     var linePath_money = [
-		    new kakao.maps.LatLng(33.481, 126.482),
-		    new kakao.maps.LatLng(33.479, 126.487),
-		    new kakao.maps.LatLng(33.480, 126.485) 
+		    new kakao.maps.LatLng(33.489165,126.484929),
+		    new kakao.maps.LatLng(33.487579,126.478257),
+		    new kakao.maps.LatLng(33.485501,126.482653) 
 		];	
 	
-// 지도에 표시할 선을 생성합니다
 		var polyline_rate = new kakao.maps.Polyline({
 		    path: linePath_rate, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 4, // 선의 두께 입니다
@@ -140,19 +138,16 @@ function setMapType(maptype) {
 		    
 		});
 	
-// 지도에 표시할 선을 생성합니다
 		var polyline_money = new kakao.maps.Polyline({
 		    path: linePath_money, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 4, // 선의 두께 입니다
-		    strokeColor: '#FF4000', // 선의 색깔입니다
+		    strokeColor: '#000000', // 선의 색깔입니다
 			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
 		    strokeStyle: 'solid' // 선의 스타일입니다
 		});
 	    
     if (maptype === 'rate') {
-	 
-	// 지도에 선을 표시합니다 
 	 
 	polyline_rate.setMap(map);
 	polyline_money.setMap(null);
@@ -163,7 +158,6 @@ function setMapType(maptype) {
     } 
     else if (maptype === 'money') {
 	    
-	// 지도에 선을 표시합니다 
 	polyline_rate.setMap(null);     
         polyline_money.setMap(map);
       	
