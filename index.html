@@ -115,9 +115,21 @@ function setMapType(maptype) {
     var moneyControl = document.getElementById('btnMoney'); 
 	
 // 평점 경로를 생성합니다
-    var linePath_rate = [
-		 
-	  			new kakao.maps.LatLng(33.488404, 126.483500),
+    var linePath_rate = [ 	
+	                            new kakao.maps.LatLng(33.489165, 126.484929),
+				    new kakao.maps.LatLng(33.488426, 126.483478),
+				    new kakao.maps.LatLng(33.486916, 126.484905),
+				    new kakao.maps.LatLng(33.484922, 126.484903),
+				    new kakao.maps.LatLng(33.484984, 126.482322),
+				    new kakao.maps.LatLng(33.486077, 126.482327),
+				    new kakao.maps.LatLng(33.486111, 126.481497),
+				    new kakao.maps.LatLng(33.485633, 126.481503)
+	  			
+		];	
+	
+// 가격 경로를 생성합니다
+    var linePath_money = [
+		 	        new kakao.maps.LatLng(33.488404, 126.483500),
 				new kakao.maps.LatLng(33.490304, 126.481323),
 				new kakao.maps.LatLng(33.487817, 126.478192),
 				new kakao.maps.LatLng(33.487038, 126.479059),
@@ -128,15 +140,8 @@ function setMapType(maptype) {
 				new kakao.maps.LatLng(33.487007, 126.481351),
 				new kakao.maps.LatLng(33.486688, 126.481601),
 				new kakao.maps.LatLng(33.486124, 126.481587),
-				new kakao.maps.LatLng(33.486113, 126.481511),
-				new kakao.maps.LatLng(33.485526, 126.481498),
-		];	
-	
-// 가격 경로를 생성합니다
-    var linePath_money = [
-		    new kakao.maps.LatLng(33.489165,126.484929),
-		    new kakao.maps.LatLng(33.487579,126.478257),
-		    new kakao.maps.LatLng(33.485501,126.482653) 
+				new kakao.maps.LatLng(33.486049, 126.482958),
+				new kakao.maps.LatLng(33.485653, 126.482940),
 		];	
 	
    var polyline_rate = new kakao.maps.Polyline({
