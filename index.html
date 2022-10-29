@@ -158,7 +158,7 @@ function setMapType(maptype) {
         moneyControl.className = 'btn';
 	   
     } 
-    else {
+    else if (maptype === 'money') {
 	    
 	// 지도에 선을 표시합니다 
         polyline_money.setMap(map);
