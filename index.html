@@ -151,8 +151,9 @@ function setMapType(maptype) {
     if (maptype === 'rate') {
 	    
 	// 지도에 선을 표시합니다 
+	polyline_money.setMap(null);  
 	polyline_rate.setMap(map);
-	    polyline_money.setMap(null);      
+	       
 
         rateControl.className = 'selected_btn';
         moneyControl.className = 'btn';
@@ -161,9 +162,10 @@ function setMapType(maptype) {
     else if (maptype === 'money') {
 	    
 	// 지도에 선을 표시합니다 
-        polyline_money.setMap(map);
-      	    polyline_rate.setMap(null);     
+	polyline_rate.setMap(null);     
 
+        polyline_money.setMap(map);
+      	
         moneyControl.className = 'selected_btn';
         rateControl.className = 'btn';
     }
