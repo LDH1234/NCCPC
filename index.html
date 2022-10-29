@@ -127,8 +127,10 @@ function setMapType(maptype) {
 		    path: linePath_rate, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 3, // 선의 두께 입니다
 		    strokeColor: '#FF4000', // 선의 색깔입니다
+			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
 		    strokeStyle: 'solid' // 선의 스타일입니다
+		    
 		});
 // 가격 경로를 지도에 표시합니다
     var linePath_money = [
@@ -141,6 +143,7 @@ function setMapType(maptype) {
 		    path: linePath_money, // 선을 구성하는 좌표배열 입니다
 		    strokeWeight: 3, // 선의 두께 입니다
 		    strokeColor: '#FF4000', // 선의 색깔입니다
+			endArrow: true,
 		    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
 		    strokeStyle: 'solid' // 선의 스타일입니다
 		});
@@ -149,22 +152,17 @@ function setMapType(maptype) {
 	    
 	// 지도에 선을 표시합니다 
 	polyline_rate.setMap(map);
-	    function closeOverlay() {
-     polyline_money.setMap(null);      
-}
- 		  
-		
+	    polyline_money.setMap(null);      
+
         rateControl.className = 'selected_btn';
         moneyControl.className = 'btn';
-	    
+	   
     } 
     else {
 	    
 	// 지도에 선을 표시합니다 
-        polyline_money.setMap(map); 
-	        function closeOverlay() {
-      	 polyline_rate.setMap(null);      
-}
+        polyline_money.setMap(map);
+      	    polyline_rate.setMap(null);     
 
         moneyControl.className = 'selected_btn';
         rateControl.className = 'btn';
