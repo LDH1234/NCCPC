@@ -111,11 +111,7 @@ var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
 	
 //- - - - - - - 경로추천 이벤트 실행 버튼
 
-kakao.maps.event.addListener(polyline_rate, 'mouseover', function(mouseEvent) {  
-    var latlng = mouseEvent.latLng;
-    console.log(latlng.toString());         
-});
-
+	
 function setMapType(maptype) { 
     var rateControl = document.getElementById('btnRate');
     var moneyControl = document.getElementById('btnMoney'); 
@@ -153,7 +149,10 @@ function setMapType(maptype) {
 	    
 	// 지도에 선을 표시합니다 
 	polyline_rate.setMap(map);
- 		   polyline_money.setMap(null); 
+	    function closeOverlay() {
+     polyline_money.setMap(null);      
+}
+ 		  
 		
         rateControl.className = 'selected_btn';
         moneyControl.className = 'btn';
@@ -163,8 +162,10 @@ function setMapType(maptype) {
 	    
 	// 지도에 선을 표시합니다 
         polyline_money.setMap(map); 
- 		   polyline_rate.setMap(null); 
-           
+	        function closeOverlay() {
+      	 polyline_rate.setMap(null);      
+}
+
         moneyControl.className = 'selected_btn';
         rateControl.className = 'btn';
     }
