@@ -83,6 +83,9 @@
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86c03ca654c456dc72c79c717705b43d&libraries=services"></script>
 <script>
+	
+	
+// - - - - - - - - - 기본적인 지도 구성 코드 - - - - - - - - - 
 // 마커를 담을 배열입니다
 var markers = [];
 
@@ -96,19 +99,8 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places();  
-	
-// 검색 옵션 객체  < 보고서 !! >	
-var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
 
-    var searchOption = {
-        location: latlng,
-        radius: 850, // 단위 : m
-	size: 15
-    };
-	
-//- - - - - - - 경로추천 이벤트 실행 버튼
+//- - - - - - - 경로추천 이벤트 실행 버튼 - - - - - - - - - 
 
 function setMapType(maptype) { 
     var rateControl = document.getElementById('btnRate');
@@ -229,7 +221,6 @@ function setMapType(maptype) {
 	circle_b.setMap(map);
 	      
 	polyline_money.setMap(map);
-	polyline_rate.setMap(null);
 	    
       	
         moneyControl.className = 'selected_btn';
@@ -239,7 +230,20 @@ function setMapType(maptype) {
 	
 
 	
+// - - - - - - - - 키워드 검색 기능 - - - - - - - - - 
 	
+	
+// 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places();  
+	
+// 검색 옵션 객체  < 보고서 !! >	
+var latlng = new kakao.maps.LatLng(33.486247, 126.483869);
+
+    var searchOption = {
+        location: latlng,
+        radius: 850, // 단위 : m
+	size: 15
+    };
 	
 // 검색 과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
@@ -446,6 +450,8 @@ function removeAllChildNods(el) {
     }
 }
      
+	
+// - - - - - - - - 추가 세부적인 기능 - - - - - - - - - - 
 	        // < 보고서 !! >
 	        // 지도 타입 변경 컨트롤 기능을 생성한다
 		var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -464,7 +470,10 @@ function removeAllChildNods(el) {
 
 		// 지도의 우측에 확대 축소 컨트롤을 추가한다
 		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-		
+	
+	
+// - - - - - - - - 검색 가능한 범위 이외의 지역 가리기  - - - - - - - - - - 		
+	
 		// 다각형 객체를 구성할 좌표배열입니다 
 		var path = [
 		  new kakao.maps.LatLng(20,100),
