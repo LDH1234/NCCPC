@@ -212,6 +212,7 @@ function setMapType(maptype) {
 	polyline_rate.setMap(map);
 	  
         rateControl.className = 'selected_btn';  
+	moneyControl.className = 'btn';
 	    
     } 
     else if (maptype === 'money') {
@@ -221,7 +222,7 @@ function setMapType(maptype) {
 	      
 	polyline_money.setMap(map);
 	    
-      	
+      	rateControl.className = 'btn'; 
         moneyControl.className = 'selected_btn';
         
     }
