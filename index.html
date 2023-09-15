@@ -58,10 +58,12 @@
 <body>
 <div class="map_wrap">
     <div id="map" style="width:100%;height:750px;position:relative;overflow:hidden;"></div>
-<div class="machine_learning">
+	
+	<div class="machine_learning">
         <span id="btnRate" class="btn" onclick="setMapType('rate')">평점</span>
         <span id="btnMoney" class="btn" onclick="setMapType('money')">가격</span>
 	    </div>
+	
     <div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
@@ -155,11 +157,7 @@ function setMapType(maptype) {
 		    strokeStyle: 'solid' // 선의 스타일입니다
 		});
 	
-	[[[[ <div class="machine_learning">
-        <span id="btnRate" class="btn" onclick="setMapType('rate')">평점</span>
-        <span id="btnMoney" class="btn" onclick="setMapType('money')">가격</span>
-	    </div> ]]]]
-     
+
    var circle_a = new kakao.maps.Circle({
     center : new kakao.maps.LatLng(33.487577, 126.478258),  // 원의 중심좌표 입니다 
     radius: 10, // 미터 단위의 원의 반지름입니다 
